@@ -1,0 +1,1 @@
+consul_test: "{{ lookup('consul', 'test something=something') }}"
