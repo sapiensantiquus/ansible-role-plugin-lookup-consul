@@ -87,7 +87,7 @@ class LookupModule(LookupBase):
             for term in terms:
                 params = self.parse_params(term)
                 u = urlparse(params['url'])
-                consul_api = consul.Consul(host=u.hostname, port=u.port)
+                consul_api = consul.Consul(host=u.hostname, port=u.port, scheme=u.scheme)
                 results = consul_api.kv.get(params['key'],
                                             token=params['token'],
                                             index=params['index'],
